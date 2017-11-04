@@ -33,12 +33,6 @@ return [
 
     'connections' => [
 
-        'sqlite' => [
-            'driver' => 'sqlite',
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
-            'prefix' => '',
-        ],
-
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
@@ -54,6 +48,27 @@ return [
             'engine' => null,
         ],
 
+        'wordpress' => [
+	        'driver' => 'mysql',
+	        'host' => env('WP_DB_HOST', '127.0.0.1'),
+	        'port' => env('WP_DB_PORT', '3306'),
+	        'database' => env('WP_DB_DATABASE', 'forge'),
+	        'username' => env('WP_DB_USERNAME', 'forge'),
+	        'password' => env('WP_DB_PASSWORD', ''),
+	        'unix_socket' => env('WP_DB_SOCKET', ''),
+	        'charset' => 'utf8mb4',
+	        'collation' => 'utf8mb4_unicode_520_ci',
+	        'prefix' => 'I8Me8Y98ZY_',
+	        'strict' => true,
+	        'engine' => null,
+        ],
+
+        'sqlite' => [
+	        'driver' => 'sqlite',
+	        'database' => env('DB_DATABASE', database_path('database.sqlite')),
+	        'prefix' => '',
+        ],
+	    /*
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),
@@ -76,7 +91,7 @@ return [
             'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
-        ],
+        ],*/
 
     ],
 
