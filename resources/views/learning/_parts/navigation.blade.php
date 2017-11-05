@@ -89,8 +89,8 @@
                             <!-- user -->
                             <li class="dropdown user">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="{{asset('themes/learning/html/images/people/110/guy-6.jpg')}}" alt=""
-                                         class="img-circle"/> Bill<span
+                                    <img src="{{ 'https://www.gravatar.com/avatar/' . md5(strtolower(trim(Auth::user()->email))) . '?d=blank' }}" alt="Profile Image"
+                                         class="img-circle"/> {{ Auth::user()->name }} <span
                                             class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
