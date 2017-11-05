@@ -57,6 +57,21 @@ Route::domain( $admin )->group( function () {
 		Route::get( '/', function () {
 			return 'admin';
 		} );
+		Route::get('upload', function() {
+			$files = Storage::disk('spaces')->files('uploads');
+
+			return view('upload', compact('files'));
+		});
+
+		Route::post('upload', function() {
+			Storage::disk('spaces')->putFile('uploads', request()->file, 'public');
+
+			return redirect()->back();
+		});
+
+		Route::get('list', function() {
+			return Storage::disk('spaces')->files('.');
+		});
 	} );
 } );
 
