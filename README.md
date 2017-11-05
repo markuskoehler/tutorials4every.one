@@ -1,3 +1,5 @@
+![Tutorials4Every.One Logo](https://github.com/markuskoehler/tutorials4every.one/raw/master/public/images/t4e_logo.fw.png "Tutorials4Every.One Logo")
+
 # tutorials4every.one
 As the name says... Tutorials for everyone.
 
@@ -5,6 +7,8 @@ As the name says... Tutorials for everyone.
 The idea for this project was born because of two incidents: First I [discovered][1] that many tutorials out there, no matter what the topic, are either incomplete or confusing - and I am planning to change that.
 Second, my girlfriend pointed me to the fact that she doesn't understand web development at all, but wanted to get a first idea of what it is about. So I thought, there should be a way to publish tutorials about one topic but for different audiences.
 That's what T4E is about: Make any possible topic appealing for everyone!
+
+(Yes, I know, there are many - big - competitors out there, but I am hopeful to spread another approach to the topic; and at least it is a nice reference project)
 
 ## Structure
 This repository contains the Laravel PHP Framework, providing the following parts of the project:
@@ -22,7 +26,8 @@ This Laravel instance interfaces with the WordPress instance on a database level
 If you should discover any security vulnerability within this project, please send an e-mail to Markus Koehler via info@koehler.pro. All security vulnerabilities will be promptly addressed.
 
 ## License
-This project is open-sourced software licensed under the MIT license (see [LICENSE][1] file).
+This project is open-sourced software licensed under the MIT license (see [LICENSE][3] file).
 
 [1]: https://www.facebook.com/markuskoehler93/posts/10214692376925183
-[2]: LICENSE
+[2]: https://github.com/corcel/corcel
+[3]: LICENSE

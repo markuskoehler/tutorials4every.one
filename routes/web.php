@@ -57,6 +57,21 @@ Route::domain( $admin )->group( function () {
 		Route::get( '/', function () {
 			return 'admin';
 		} );
+		Route::get('upload', function() {
+			$files = Storage::disk('spaces')->files('uploads');
+
+			return view('upload', compact('files'));
+		});
+
+		Route::post('upload', function() {
+			Storage::disk('spaces')->putFile('uploads', request()->file, 'public');
+
+			return redirect()->back();
+		});
+
+		Route::get('list', function() {
+			return Storage::disk('spaces')->files('.');
+		});
 	} );
 } );
 
@@ -68,16 +83,16 @@ Route::domain( $guest )->group( function () {
 			'local'        => is_local(),
 			'qa/local=dev' => is_dev(),
 		];*/
-
-		return 'guest';
-	} );
+		return view('learning.guest.home');
+	} )->name('guest.home');
 } );
 
 // Authentication routes, as in Auth::routes(), with prefix
 Route::prefix( 'auth' )->group( function () {
 	$this->get( 'login', 'Auth\LoginController@showLoginForm' )->name( 'login' );
 	$this->post( 'login', 'Auth\LoginController@login' );
-	$this->post( 'logout', 'Auth\LoginController@logout' )->name( 'logout' );
+	//$this->post( 'logout', 'Auth\LoginController@logout' )->name( 'logout' );
+	$this->get( 'logout', 'Auth\LoginController@logout' )->name( 'logout' );
 
 	// Registration Routes...
 	$this->get( 'register', 'Auth\RegisterController@showRegistrationForm' )->name( 'register' );
@@ -90,4 +105,4 @@ Route::prefix( 'auth' )->group( function () {
 	$this->post( 'password/reset', 'Auth\ResetPasswordController@reset' );
 } );
 
-Route::get( '/home', 'HomeController@index' )->name( 'home' );
+//Route::get( '/home', 'HomeController@index' )->name( 'home' );

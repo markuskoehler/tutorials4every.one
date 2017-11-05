@@ -3466,22 +3466,22 @@ window.onload = loadScript;
 
 function initScripts() {
     var $scripts = [
-        "js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.js",
-        "js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.extensions.js",
-        "js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.services.js",
-        "js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.microdata.js",
-        "js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.microformat.js",
-        "js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.overlays.js",
-        "js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.rdfa.js",
-        "js/vendor/maps/google/jquery-ui-map/addons/infobox_packed.js",
-        "js/vendor/maps/google/jquery-ui-map/addons/markerclusterer.min.js"
+        "/themes/learning/html/js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.js",
+        "/themes/learning/html/js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.extensions.js",
+        "/themes/learning/html/js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.services.js",
+        "/themes/learning/html/js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.microdata.js",
+        "/themes/learning/html/js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.microformat.js",
+        "/themes/learning/html/js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.overlays.js",
+        "/themes/learning/html/js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.rdfa.js",
+        "/themes/learning/html/js/vendor/maps/google/jquery-ui-map/addons/infobox_packed.js",
+        "/themes/learning/html/js/vendor/maps/google/jquery-ui-map/addons/markerclusterer.min.js"
     ];
 
     $.each($scripts, function (k, v) {
-        if ($('[src="' + v + '"]').length) return true;
+        if ($('[src="' + APP_URL + v + '"]').length) return true;
         var scriptNode = document.createElement('script');
 
-        scriptNode.src = v;
+        scriptNode.src = APP_URL + v;
         $('head').prepend($(scriptNode));
     });
 
@@ -4158,12 +4158,12 @@ module.exports = [ {
     "use strict";
 
     $.fn.tkFormControlMaterial = function(){
-        this
+        $(this)
             .blur(function () {
-                if (this.val())
-                    this.addClass('used');
+                if ($(this).val())
+                    $(this).addClass('used');
                 else
-                    this.removeClass('used');
+                    $(this).removeClass('used');
             })
             .after('<span class="ma-form-highlight"></span><span class="ma-form-bar"></span>');
     };
