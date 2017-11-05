@@ -1,3 +1,5 @@
+![Tutorials4Every.One Logo](https://github.com/markuskoehler/tutorials4every.one/raw/master/public/images/t4e_logo.fw.png "Tutorials4Every.One Logo")
+
 # tutorials4every.one
 As the name says... Tutorials for everyone.
 
