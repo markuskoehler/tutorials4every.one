@@ -68,9 +68,8 @@ Route::domain( $guest )->group( function () {
 			'local'        => is_local(),
 			'qa/local=dev' => is_dev(),
 		];*/
-
-		return 'guest';
-	} );
+		return view('learning.guest.home');
+	} )->name('guest.home');
 } );
 
 // Authentication routes, as in Auth::routes(), with prefix
@@ -90,4 +89,4 @@ Route::prefix( 'auth' )->group( function () {
 	$this->post( 'password/reset', 'Auth\ResetPasswordController@reset' );
 } );
 
-Route::get( '/home', 'HomeController@index' )->name( 'home' );
+//Route::get( '/home', 'HomeController@index' )->name( 'home' );
