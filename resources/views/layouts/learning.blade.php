@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="transition-navbar-scroll top-navbar-xlarge ls-bottom-footer" lang="{{ app()->getLocale() }}">
+<html class="transition-navbar-scroll top-navbar-xlarge bottom-footer" lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
