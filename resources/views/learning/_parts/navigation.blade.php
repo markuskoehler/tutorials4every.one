@@ -84,26 +84,34 @@
                     </li>
                 </ul>
                 <div class="navbar-right">
-                    <ul class="nav navbar-nav navbar-nav-bordered navbar-nav-margin-right">
-                        <!-- user -->
-                        <li class="dropdown user">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="{{asset('themes/learning/html/images/people/110/guy-6.jpg')}}" alt=""
-                                     class="img-circle"/> Bill<span
-                                        class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="website-student-dashboard.html"><i class="fa fa-bar-chart-o"></i> Dashboard</a>
-                                </li>
-                                <li><a href="website-student-courses.html"><i class="fa fa-mortar-board"></i> My Courses</a>
-                                </li>
-                                <li><a href="website-student-profile.html"><i class="fa fa-user"></i> Profile</a></li>
-                                <li><a href="login.html"><i class="fa fa-sign-out"></i> Logout</a></li>
-                            </ul>
-                        </li>
-                        <!-- // END user -->
-                    </ul>
-                    <a href="login.html" class="navbar-btn btn btn-primary">Log In</a>
+                    @auth
+                        <ul class="nav navbar-nav">
+                            <!-- user -->
+                            <li class="dropdown user">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="{{asset('themes/learning/html/images/people/110/guy-6.jpg')}}" alt=""
+                                         class="img-circle"/> Bill<span
+                                            class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="website-student-dashboard.html"><i class="fa fa-bar-chart-o"></i>
+                                            Dashboard</a>
+                                    </li>
+                                    <li><a href="website-student-courses.html"><i class="fa fa-mortar-board"></i> My
+                                            Courses</a>
+                                    </li>
+                                    <li><a href="website-student-profile.html"><i class="fa fa-user"></i> Profile</a>
+                                    </li>
+                                    <li><a href="{{ route('logout') }}">
+                                            <i class="fa fa-sign-out"></i> Logout
+                                        </a></li>
+                                </ul>
+                            </li>
+                            <!-- // END user -->
+                        </ul>
+                    @else
+                        <a href="{{route('login')}}" class="navbar-btn btn btn-primary">Log In</a>
+                    @endauth
                 </div>
             </div>
             <!-- /.navbar-collapse -->
